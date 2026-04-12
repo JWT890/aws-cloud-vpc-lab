@@ -57,4 +57,8 @@ After saving go to the subnet associations table and see this:
 ![Subnet2](./images/subnet2.png)    
 Then click on the edit subnet associations button, then in the edit associations options, select the public subnet and the private-subnet-1A and click on save associations. This will be public.   
 For the Private, go back to to the route tables pane and select the create route table button. After creating go the edit routes like for the public one and in the same screen click on the add route button.  
-For the destination, 
+For the destination, choose 0.0.0.0/24 and then for target select NAT-Instance, then click on save changes. 
+Then for Private-RT go to subnet associations and click on edit subnet associations. Then select Private-Subnet-1A and 1B and hit save associations.    
+
+# Security Groups
+To reach security groups go to the left pane and click on security groups, then go select the orange button that says create security group
