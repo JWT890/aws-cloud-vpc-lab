@@ -23,3 +23,17 @@ Then you should see the subnets created.
 Then select the public subnet, click on actions and select the edit subnet settings and see this:   
 ![Subnet edit](./images/edit.png)   
 Then click on the option to enable auto-assign public IPv4 addresses, then click on save.
+
+# Internet Gateway
+
+Next is to establish a internet gateway, click on internet gateways in the left side of the screen, then click on create a internet gateway and see this:   
+![Gate](./images/gate.png)  
+Name it Cloud-VPC-Lab-IGW, then click on create internet gateway. After creation, click on the attach to VPC button which will then allow you to choose which VPC you want to attach to. In this case, it will be the VPC lab one. Then click on attach internet gateway.   
+
+# NAT Instance
+
+Then for the NAT Instance go to EC2 and click on launch instance which will take you to the EC2 creation screen. Name it NAT-Instance. Then in AMI, click on browse more AMIs and go to the community AMIs tab and search for amzn-ami-vpc-nat and then click on select for the first option.   
+For the instance type select the t2.micro, then click on create key pair and name it cloud-lab with the type set to rsa and .pem and click on create.   
+Then for the network settings click on edit, then change the VPC to the Cloud-Lab-VPC, keep the public-subnet-1a as the subnet and keep auto-enable, then select on the option to create a new security group.  
+Name the new security group NAT-Instance-5G, have the description be Allow outbound from private subnets. Then for inbound rules for the type be all traffic, set the source to custom for source be 10.0.10.0/24 like so:  
+![Group](./images/group.png)    
