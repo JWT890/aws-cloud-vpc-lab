@@ -37,3 +37,11 @@ For the instance type select the t2.micro, then click on create key pair and nam
 Then for the network settings click on edit, then change the VPC to the Cloud-Lab-VPC, keep the public-subnet-1a as the subnet and keep auto-enable, then select on the option to create a new security group.  
 Name the new security group NAT-Instance-5G, have the description be Allow outbound from private subnets. Then for inbound rules for the type be all traffic, set the source to custom for source be 10.0.10.0/24 like so:  
 ![Group](./images/group.png)    
+Then click on create a second security group rule, same settings as before with all traffic and custom but the source CIDR be 10.0.11.0/24. Then click on Launch Instance.  
+After creation go to the instance pane and then select on the NAT Instance, then click on the actions tab -> networking and then click on the Change source/destination check:  
+![Change](./images/change.png)  
+Then click on it and see this:  
+![Check](./images/check.png)    
+Then make sure the stop button is selected and click on save.   
+Afterwards you should see this: 
+![Check2](./images/change2.png)
