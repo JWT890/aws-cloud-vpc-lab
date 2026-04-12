@@ -45,3 +45,16 @@ Then click on it and see this:
 Then make sure the stop button is selected and click on save.   
 Afterwards you should see this: 
 ![Check2](./images/change2.png)
+
+# Route Tables
+For route tables go back to the VPC tab and then go click on the create route table button. 
+For the first one name it Public-RT with the VPC for the lab selected like so:  
+![Route1](./images/route1.png)  
+Then click on create route table. After creation for the routes, go to the edit routes in the table pane and click on edit routes to see this:  
+![Route Edit](./images/route-edit.png)  
+Then click on the add route button, for destination select 0.0.0.0/0, for target select the internet gateway with the cloud-vpc-lab created, then click on save changes.    
+After saving go to the subnet associations table and see this:  
+![Subnet2](./images/subnet2.png)    
+Then click on the edit subnet associations button, then in the edit associations options, select the public subnet and the private-subnet-1A and click on save associations. This will be public.   
+For the Private, go back to to the route tables pane and select the create route table button. After creating go the edit routes like for the public one and in the same screen click on the add route button.  
+For the destination, 
