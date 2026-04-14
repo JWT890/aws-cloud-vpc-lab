@@ -61,4 +61,10 @@ For the destination, choose 0.0.0.0/24 and then for target select NAT-Instance, 
 Then for Private-RT go to subnet associations and click on edit subnet associations. Then select Private-Subnet-1A and 1B and hit save associations.    
 
 # Security Groups
-To reach security groups go to the left pane and click on security groups, then go select the orange button that says create security group
+To reach security groups go to the left pane and click on security groups, then go select the orange button that says create security group and see this after clicking:    
+![Group](./images/security.png) 
+Name this first group Bastion-SG, description of SSH access from my IP only, VPC for Cloud-VPC-Lab, then for inbound rules click on add rule and change the type to SSH and source to My IP which should auto detect and leave outbound as default, then click on create security group.    
+Then click on create security group again for the second group and name it Web-SG, description of HTTP/HTTPS from internet, SSH from Bastion with the same VPC as before, then for inbound rules have the first one be HTTP with a source anywhere IPv4, then a second rule with type HTTPS with source anywhere IPv4, then a third rule with type SSH and a custom source with it as Bastion-SG, then click on create security group.  
+Then for the third group, click on create security group and name it App-SG with a description of Custom app port from Web tier only, same VPC as before, with the inbound rules for the first one being type custom TCP with port 8080 and source being custom for Web-SG, then add a second rule that is SSH with a custom for Bastion-SG, then click on create security group. 
+
+# Test Instances and Validation
