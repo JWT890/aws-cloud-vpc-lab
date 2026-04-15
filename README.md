@@ -83,5 +83,10 @@ Then for a final test type ssh -i "C:\Users\user\Downloads\cloud-lab.pem" ec2-us
 ![Result](./images/result.png)  
 
 # VPC Flow Logs
+Next step is to go to Your VPCs, then select the Cloud-Lab-VPC, then select the actions dropdown and select the Create flow log option: 
+![Flow log](./images/flow.png)  
+Then select the filter for all and for the destination have it be a S3 Bucket. First go to the S3 page and click on Create Bucket and name the bucket cloud-lab-vpc-initials and then create the bucket.    
+Then copy the ARN for the bucket in properties and go back to the flow page and copy the ARN into the S3 bucket ARN and for log record keep it as AWS default, then click on create flow log.   
+
 
 # Linux Web Server
