@@ -77,3 +77,11 @@ Then in PowerShell of the Command line type ssh -i "C:\Users\username\Downloads\
 ![SSH](./images/ssh.png)    
 For the next step is to SSH from the Bastion to a Private Instance, to do this type ssh -A -i "C:\Users\username\Downloads\cloud-lab.pem" ec2-user@54.174.223.21 for agent forwarding which should see like this:   
 ![2](./images/instance2.png)    
+*You might also have to go and edit the inbound rules for App or Bastion and change it to 0.0.0.0/0.*
+Then on the host type scp -i "C:\Users\user\Downloads\cloud-lab.pem" "C:\Users\user\Downloads\cloud-lab.pem" ec2-user@54.174.223.21:~ which should copy over to the bastion. Then on the bastion type chmod 400 cloud-lab.pem and then ssh -i cloud-lab.pem ec2-user@10.0.2.44 so I don't think agent forwarding will work here for right now.    
+Then for a final test type ssh -i "C:\Users\user\Downloads\cloud-lab.pem" ec2-user@10.0.2.44 with the expected result:  
+![Result](./images/result.png)  
+
+# VPC Flow Logs
+
+# Linux Web Server
