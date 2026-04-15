@@ -72,3 +72,8 @@ Then go the EC2 and create a new instance called Bastion-Host with Amazon Linux 
 Then for the web server one click on Launch Instance and name it Web Server with the Amazon Linux AMI with t2.micro and same key as before, then it network settings choose the VPC as before with Public-Subnet-1A, auto assinged public IP and Web-SG security group and then clcik create instance.  
 Then the third one, the app server, click on launch instance and name it App-Server with the Amazon Linux AMI, t2.micro, same key as before, edit the network settings to have same VPC as before with it on hte Private-Subnet-1A, disable auto assign public IP and App-SG Security group.    
 ![Instance](./images/instance.png)  
+
+Then in PowerShell of the Command line type ssh -i "C:\Users\username\Downloads\cloud-lab.pem" ec2-user@ip-address and should see this as a ssh test:   
+![SSH](./images/ssh.png)    
+For the next step is to SSH from the Bastion to a Private Instance, to do this type ssh -A -i "C:\Users\username\Downloads\cloud-lab.pem" ec2-user@54.174.223.21 for agent forwarding which should see like this:   
+![2](./images/instance2.png)    
