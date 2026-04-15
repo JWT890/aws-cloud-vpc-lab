@@ -68,3 +68,7 @@ Then click on create security group again for the second group and name it Web-S
 Then for the third group, click on create security group and name it App-SG with a description of Custom app port from Web tier only, same VPC as before, with the inbound rules for the first one being type custom TCP with port 8080 and source being custom for Web-SG, then add a second rule that is SSH with a custom for Bastion-SG, then click on create security group. 
 
 # Test Instances and Validation
+Then go the EC2 and create a new instance called Bastion-Host with Amazon Linux 2023 AMI, t2.micro, for key pair pick cloud-lab, then press edit on network settings. For VPC choose the Cloud-VPC-Lab with the Public-1A Subnet with auto-assigned Public IP enabled, then choose existing security group of Bastion-SG and then click on create/launch instance.  
+Then for the web server one click on Launch Instance and name it Web Server with the Amazon Linux AMI with t2.micro and same key as before, then it network settings choose the VPC as before with Public-Subnet-1A, auto assinged public IP and Web-SG security group and then clcik create instance.  
+Then the third one, the app server, click on launch instance and name it App-Server with the Amazon Linux AMI, t2.micro, same key as before, edit the network settings to have same VPC as before with it on hte Private-Subnet-1A, disable auto assign public IP and App-SG Security group.    
+![Instance](./images/instance.png)  
